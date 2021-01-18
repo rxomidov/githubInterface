@@ -57,6 +57,7 @@ export default function RepoDetails(props) {
     );
 }
 const RepoDetailsWrapper = styled.section`
+  margin-bottom: 6rem;
   .repo-name{
     margin: 2rem 0;
     h4{

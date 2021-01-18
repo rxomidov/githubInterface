@@ -51,6 +51,7 @@ export default function UserDetails(props) {
     );
 }
 const UserDetailsWrapper = styled.div`
+  margin-bottom: 6.5rem;
   .user-avatar{
     img{
      width: 100%; 

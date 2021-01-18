@@ -49,6 +49,7 @@ export default function Home(props) {
     );
 }
 const HomeWrapper = styled.section`
+  margin-bottom: 6rem;
   .search-form{
     display:flex;
     margin: 4rem 0;

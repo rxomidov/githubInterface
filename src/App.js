@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import UserDetails from "./components/UserDetails";
 import RepoDetails from "./components/RepoDetails";
 import About from "./pages/About";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -25,15 +26,11 @@ function App() {
                 <Route path="/users/:id/:repo">
                     <RepoDetails/>
                 </Route>
-                {/*  <Route  path="/desktop">*/}
-                {/*    <Desktop/>*/}
-                {/*  </Route>*/}
-                {/*  </Route>*/}
                 {/*  <Route path="*">*/}
                 {/*    <Error/>*/}
                 {/*  </Route>*/}
             </Switch>
-            {/*<Footer/>*/}
+            <Footer/>
         </Router>
     );
 }
