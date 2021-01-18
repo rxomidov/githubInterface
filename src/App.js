@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Home from "./pages/Home";
 import UserDetails from "./components/UserDetails";
 import RepoDetails from "./components/RepoDetails";
+import About from "./pages/About";
 
 function App() {
     return (
@@ -15,9 +16,9 @@ function App() {
                   <Route exact path="/">
                     <Home/>
                   </Route>
-                {/*  <Route exact path="/products">*/}
-                {/*    <Products/>*/}
-                {/*  </Route>*/}
+                <Route path="/about">
+                    <About/>
+                </Route>
                   <Route exact path="/users/:id">
                     <UserDetails/>
                   </Route>

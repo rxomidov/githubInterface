@@ -1,11 +1,11 @@
 import React from 'react';
 import UserList from "../components/UserList";
 import User from "../components/User";
+import styled from "styled-components";
 
 
 export default function Home(props) {
     const [loading, setLoading] = React.useState(false);
-    const [data, setData] = React.useState({});
     const [username, setUsername] = React.useState("");
     const [users, setUsers] = React.useState([]);
 
@@ -24,16 +24,16 @@ export default function Home(props) {
     };
 
     return (
-        <div>
-            <div>
-                <form action="">
+        <HomeWrapper>
+            <div className="container">
+                <form action=""  className="search-form">
                     <input type="text"
                            className="form-control"
                            value={username}
                            onChange={handleChange}
-                           placeholder="enter username"/>
+                           placeholder="Enter username..."/>
                     <button type="submit"
-                            className="btn btn-outline-danger"
+                            className="btn btn-success btn-search"
                             onClick={handleSubmit}>Search
                     </button>
                 </form>
@@ -44,7 +44,20 @@ export default function Home(props) {
             {users.map(user => (
                 <User {...user} key={user.login}/>
             ))}
-            {/*<UserList loading={loading} data={data}/>*/}
-        </div>
+        </HomeWrapper>
     );
 }
+const HomeWrapper = styled.section`
+  .search-form{
+    display:flex;
+    margin: 4rem 0;
+    input{
+      border-radius: 0;
+      padding: 0 2rem;
+    }
+  }
+  .btn-search{
+    border-radius: 0;
+    padding: 0 2rem;
+  }
+`;

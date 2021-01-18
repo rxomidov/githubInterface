@@ -8,7 +8,6 @@ export default function RepoDetails(props) {
     const [loading, setLoading] = React.useState(false);
     const [repository, setRepository] = React.useState([]);
     const [commits, setCommits] = React.useState([]);
-    const [contributions, setContributions] = React.useState([]);
     React.useEffect(()=>{
         setLoading(true);
         axios.get(`https://api.github.com/repos/${id}/${repo}`)
@@ -26,7 +25,7 @@ export default function RepoDetails(props) {
 
         }
     },[]);
-    console.log(contributions.contributions)
+
     return (
         <div>
             <div>
