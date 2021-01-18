@@ -40,13 +40,26 @@ const HeaderWrapper = styled.section`
   .header-middle-links{
     display:flex;
     justify-content: space-between;
+    align-items: center;
     list-style: none;
+    
     li{
       margin: 1rem;
+      a{
+        text-decoration: none;
+        color:#000;
+        transition: 0.3s;
+        text-transform:uppercase;
+        font-weight:bold;
+        :hover{
+        color: #27784e;
+        }
+      }
     }
   }
   .header-logo{
     display:flex;
     align-items: center;
+    font-size: 2rem;
   }
 `
