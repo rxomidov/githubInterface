@@ -61,5 +61,8 @@ const HeaderWrapper = styled.section`
     display:flex;
     align-items: center;
     font-size: 2rem;
+    svg{
+     margin-right: 0.5rem; 
+    }
   }
 `

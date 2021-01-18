@@ -9,7 +9,7 @@ export default function User(user) {
             <div className="container">
                 <div className="user-card">
                     <img src={user.avatar_url} alt="avatar"/>
-                    <h3 className="username">Username: {user.login}</h3>
+                    <h3 className="username">Username: <span>{user.login}</span></h3>
                     <Link className="view" to={`/users/${user.login}`}>
                         <div>
                             View Profile
@@ -31,6 +31,12 @@ const UserWrapper = styled.div`
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    .username{
+      span{
+        color:#27784e;
+      }
+    }
     .view{
       background:#2d8b5b;
       border: none;

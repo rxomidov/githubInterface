@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import axios from "axios";
 import Commit from "./Commit";
+import styled from "styled-components";
 
 export default function RepoDetails(props) {
     const {id, repo} = useParams();
@@ -27,25 +28,42 @@ export default function RepoDetails(props) {
     },[]);
 
     return (
-        <div>
-            <div>
-                Repository Name:
-                {repository.name}
+        <RepoDetailsWrapper>
+            <div className="container">
+                <div  className="repo-name">
+                    <h4>
+                        Repository Name:
+                        <span>{repository.name}</span>
+                    </h4>
+                </div>
+                <div className="repo-name">
+                    <h4>
+                        Created At:
+                        <span>{repository.created_at}</span>
+                    </h4>
+                </div>
+                <h4>Last Commits:</h4>
+                <div>
+                    {commits.map(commit=>(
+                        <Commit key={commit.sha} {...commit}/>
+                    ))}
+                </div>
+                <div>
+                    Contributions:
+                    {commits.length}
+                </div>
             </div>
-            <div>
-                Created At:
-                {repository.created_at}
-            </div>
-            <h4>Last Commits:</h4>
-            <div>
-                {commits.map(commit=>(
-                    <Commit key={commit.sha} {...commit}/>
-                ))}
-            </div>
-            <div>
-                Contributions:
-                {commits.length}
-            </div>
-        </div>
+        </RepoDetailsWrapper>
     );
 }
+const RepoDetailsWrapper = styled.section`
+  .repo-name{
+    margin: 2rem 0;
+    h4{
+      span{
+        margin-left: 0.5rem;
+        color: #27784e;
+      }
+    }
+  }
+`;

@@ -26,6 +26,7 @@ export default function Home(props) {
     return (
         <HomeWrapper>
             <div className="container">
+                <h1 className="section-title text-center">An Interface to work with Github</h1>
                 <form action=""  className="search-form">
                     <input type="text"
                            className="form-control"
@@ -59,5 +60,10 @@ const HomeWrapper = styled.section`
   .btn-search{
     border-radius: 0;
     padding: 0 2rem;
+  }
+  .section-title{
+    margin: 2rem 0;
+    font-size: 2rem;
+    color:#999999;
   }
 `;
