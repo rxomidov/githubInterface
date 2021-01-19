@@ -18,7 +18,7 @@ export default function RepoDetails(props) {
             });
         axios.get(`https://api.github.com/repos/${id}/${repo}/commits`)
             .then(response=>{
-                //console.log(response);
+                console.log(response);
                 setCommits(response.data);
                 setLoading(false);
             });
@@ -42,22 +42,28 @@ export default function RepoDetails(props) {
                         <span>{repository.created_at}</span>
                     </h4>
                 </div>
-                <h4>Last Commits:</h4>
+                <div className="d-flex justify-content-between">
+                    <h4>Last Commits</h4>
+                    <h4>Committer</h4>
+                </div>
+
                 <div>
                     {commits.map(commit=>(
                         <Commit key={commit.sha} {...commit}/>
                     ))}
                 </div>
-                <div>
-                    Contributions:
-                    {commits.length}
+                <div className="repo-name">
+                    <h4>
+                        Contributions:
+                        <span>{commits.length}</span>
+                    </h4>
                 </div>
             </div>
         </RepoDetailsWrapper>
     );
 }
 const RepoDetailsWrapper = styled.section`
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
   .repo-name{
     margin: 2rem 0;
     h4{
