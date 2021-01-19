@@ -10,7 +10,9 @@ export default function About(props) {
                     dicta eos et expedita explicabo, ipsa libero maxime natus nulla
                     odit omnis porro, quam reprehenderit repudiandae soluta voluptas?
                     Dolor expedita iste labore, molestias porro rem temporibus.
-                    Expedita hic minima obcaecati velit voluptas voluptate.</p>
+                    Expedita hic minima obcaecati velit voluptas voluptate.
+                    🚀
+                </p>
             </div>
         </div>
     );

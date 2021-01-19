@@ -65,4 +65,9 @@ const HeaderWrapper = styled.section`
      margin-right: 0.5rem; 
     }
   }
+  @media screen and (max-width: 768px){
+    nav{
+      padding: 1rem 1rem 0;
+    }
+  }
 `

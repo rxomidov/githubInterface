@@ -67,4 +67,11 @@ const HomeWrapper = styled.section`
     font-size: 2rem;
     color:#999999;
   }
+  
+  @media screen and (max-width: 768px){
+    .section-title{
+      font-size: 1.6rem;
+      margin: 1rem 0 0;
+    }
+  }
 `;
