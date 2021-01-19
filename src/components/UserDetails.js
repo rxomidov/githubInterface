@@ -3,18 +3,25 @@ import axios from 'axios';
 import {Link, useParams} from 'react-router-dom';
 import Repo from "./Repo";
 import styled from "styled-components";
+import {FaUsers, FaLocationArrow} from "react-icons/all";
 
 export default function UserDetails(props) {
     const {id} = useParams();
     const [loading, setLoading] = React.useState(false);
     const [user, setUser] = React.useState([]);
     const [repos, setRepos] = React.useState([]);
+    const [starred, setStarred] = React.useState([]);
     React.useEffect(()=>{
         setLoading(true);
         axios.get(`https://api.github.com/users/${id}`)
             .then(response=>{
                 console.log(response);
                 setUser(response.data);
+            });
+        axios.get(`https://api.github.com/users/${id}/starred`)
+            .then(response=>{
+                console.log(response);
+                setStarred(response.data);
             });
         axios.get(`https://api.github.com/users/${id}/repos`)
             .then(response=>{
@@ -35,8 +42,15 @@ export default function UserDetails(props) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-4">
-                        <div className="user-avatar">
-                            <img src={user.avatar_url} alt="avatar"/>
+                        <div className="user-info">
+                            <div className="user-avatar">
+                                <img src={user.avatar_url} alt="avatar"/>
+                            </div>
+                            <div>Bio: {user.bio}</div>
+                            <div>{user.following} following</div>
+                            <div><FaUsers/> {user.followers} followers</div>
+                            <div>⭐ {starred.length}</div>
+                            <div><FaLocationArrow/> {user.location}</div>
                         </div>
                     </div>
                     <div className="col-md-8">
